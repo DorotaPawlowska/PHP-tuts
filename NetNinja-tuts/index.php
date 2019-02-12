@@ -1,6 +1,12 @@
 <?php 
 
-    // echo 'hello, ninjas';
+    define('NAME', 'Yoshi');
+    
+    // $name = 'Yoshi';
+    $age = 30;
+
+    // $name = 'Mario';
+    // define('NAME', 'Mario');
 
 ?>
 
@@ -9,14 +15,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>First PHP file</title>
+    <title>PHP files</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
-    <!-- <script src="main.js"></script> -->
 </head>
 <body>
     
-    <h1><?php echo 'hello ninjas'; ?></h1>
+    <h1>User Profile Page</h1>
+    <div><?php echo NAME;?></div>
+    <div><?php echo $age;?></div>
 
 </body>
 </html>
