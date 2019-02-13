@@ -1,33 +1,46 @@
 <?php 
 
-$radius = 25;
-$pi = 3.14;
+// ================ indexed arrays
 
-//basic - *, /, +, -, **
-// echo $pi * $radius **2;
+$peopleOne = ['shaun', 'crystal', 'ryu'];
+// $name = 'shaun';
+// $name[1];
+// echo $peopleOne[1];
 
-// kolejność działań ( B() - I** - D/ - M* - A+ - S-)
+$peopleTwo = array('ken', 'chun-li');
+// echo $peopleTwo[1];
 
-// echo 2 * (4 + 9) / 3;
+$ages = [20, 30, 40, 50];
+// print_r($ages);
+$ages[1] = 25;
+// print_r($ages);
+$ages[] = 60;
+// print_r($ages);
+array_push($ages, 70);
+// print_r($ages);
 
-//inkrementacja dekrementacja
+// echo count($ages); // zliczanie elementów w tablicy
 
-// echo $radius++;
-// echo ++$radius;
-// echo $radius--;
-// echo --$radius;
+$peopleThree = array_merge($peopleOne, $peopleTwo);
+// print_r($peopleThree);
 
-$age = 20;
-// echo $age += 10;
-// echo $age *= 2;
-// echo $age -= 10;
+// ================ associative arrays ( key & value pairs)
 
-//number function
+$ninjasOne = ['shaun'=>'black', 'mario'=>'orange', 'luigi'=>'brown'];
+// echo $ninjasOne['mario'];
+// print_r($ninjasOne);
 
-// echo floor($pi);
-// echo ceil($pi);
+$ninjasTwo = array('bowser'=>'green', 'peach'=>'yellow');
+// print_r($ninjasTwo);
 
-echo pi();
+$ninjasTwo['toad'] ='pink';
+$ninjasTwo['peach'] ='pink';
+// print_r($ninjasTwo);
+// echo count($ninjasOne);
+
+$ninjasThree = array_merge($ninjasOne, $ninjasTwo);
+print_r($ninjasThree);
+
 
 ?>
 
