@@ -1,12 +1,6 @@
 <?php 
 
-    //MySQLi or PDO - connect to DB
-    $conn = mysqli_connect('localhost', 'shaun', 'qwerty', 'ninja_pizza');
-
-    //check the connection
-    if(!$conn){
-        echo 'Connection error' . mysqli_connect_error();
-    }
+    include('config/db_connect.php');
 
     // write query for all pizzas
     $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -58,9 +52,9 @@
             <?php endforeach ?>
 
             <?php if(count($pizzas) >= 3):?>
-                <p>there are 3 or more pizzas</p>
+                <!-- <p>there are 3 or more pizzas</p> -->
             <?php else: ?>
-                <p>there are less then 3 pizzas</p>
+                <!-- <p>there are less then 3 pizzas</p> -->
             <?php endif ?>
 
         </div>
