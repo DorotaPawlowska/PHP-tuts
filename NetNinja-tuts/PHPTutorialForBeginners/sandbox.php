@@ -3,20 +3,26 @@
 //superglobal
 // $_GET['name'], $_POST['name']
 
-echo $_SERVER['SERVER_NAME'] . '<br />';
-echo $_SERVER['REQUEST_METHOD'] . '<br />';
-echo $_SERVER['SCRIPT_FILENAME'] . '<br />';
-echo $_SERVER['PHP_SELF'] . '<br />';
+// echo $_SERVER['SERVER_NAME'] . '<br />';
+// echo $_SERVER['REQUEST_METHOD'] . '<br />';
+// echo $_SERVER['SCRIPT_FILENAME'] . '<br />';
+// echo $_SERVER['PHP_SELF'] . '<br />';
 
 // $_SESSION, $_COOKIE
 // sessions
 
 if(isset($_POST['submit'])){
+
+// cookies
+    setcookie('gender', $_POST['gender'], time() + 86400); // 1 day expa
+
     session_start();
     $_SESSION['name'] = $_POST['name'];
 
     header('Location: index.php');
 }
+
+
 
 
 ?>
@@ -36,6 +42,10 @@ if(isset($_POST['submit'])){
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         
         <input type="text" name="name">
+        <select name="gender" >
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
         <input type="submit" name="submit" value="submit">
     
     </form>
