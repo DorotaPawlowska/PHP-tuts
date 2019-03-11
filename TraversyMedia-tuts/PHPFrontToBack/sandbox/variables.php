@@ -45,7 +45,7 @@
 
     define('GREETING', 'Hello Everyone', true); // 3 parametr
     // echo GREETING;
-    echo greeting;
+    echo constan("greeting"); // w3school example
 
     echo '<br />' . $sum;
     echo '<br />' . $output;

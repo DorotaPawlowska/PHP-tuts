@@ -3,13 +3,11 @@
 
     // $_SESSION['name'] = 'mario';
     if($_SERVER['QUERY_STRING'] == 'noname'){
-        // unset($_SESSION['name']); // one var
-        session_unset(); // all
+        unset($_SESSION['name']); // one var
+        // session_unset(); // all
     }
-    $name = $_SESSION['name'];
+    $name = $_SESSION['name'] ?? 'Guest'; // defoult value for variable
 ?>
-
-
 
 <head>
     <meta charset="utf-8">
