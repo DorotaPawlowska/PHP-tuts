@@ -72,12 +72,5 @@
 
     $original = gzuncompress($compressed);
     echo $original;
-
-
-
-
-
-
-
-
+    
 ?>
