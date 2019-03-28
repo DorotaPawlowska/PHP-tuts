@@ -1,6 +1,5 @@
 <?php
  
-    
 $people = array(
     'Allison',
     'Arthur',
