@@ -1,15 +1,33 @@
 <?php
 
-  class User{
-    // proprties and methods
+  class User {
+
+    public $username = 'Ryu';
+    public $email = 'ryu@thenetninja.co.uk';
+
+    public function addFriend(){
+      return "$this->email added a new friend";
+    }
+
   }
 
   // instancja klasy 
   $userOne = new User();
   $userTwo = new User();
 
-  echo 'the class is ' . get_class($userOne) . '</br>';
-  echo 'the class is ' . get_class($userTwo) . ' too.';
+  echo $userOne->username . '</br>';
+  echo $userOne->email . '</br>';
+  echo $userOne->addFriend() . '</br>';
+
+  $userTwo->username = 'yoshi';
+  $userTwo->email = 'yoshi@thenetninja.co.uk';
+
+  echo $userTwo->username . '</br>';
+  echo $userTwo->email . '</br>';
+  echo $userTwo->addFriend() . '</br>';
+
+  // print_r(get_class_vars('User'));
+  // print_r(get_class_methods('User'));
 
 ?>
 
