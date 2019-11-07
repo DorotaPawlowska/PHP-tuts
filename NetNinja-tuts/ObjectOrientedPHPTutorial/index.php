@@ -1,6 +1,15 @@
 <?php
 
-  echo 'hello, ninja';
+  class User{
+    // proprties and methods
+  }
+
+  // instancja klasy 
+  $userOne = new User();
+  $userTwo = new User();
+
+  echo 'the class is ' . get_class($userOne) . '</br>';
+  echo 'the class is ' . get_class($userTwo) . ' too.';
 
 ?>
 
