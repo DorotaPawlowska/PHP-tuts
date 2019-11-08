@@ -3,13 +3,12 @@
   class User {
 
     public $username;
-    public $email;
+    private $email;
 
     public function __construct($username, $email){
       $this->username = $username;
       $this->email = $email;
     }
-
 
     public function addFriend(){
       return "$this->email added a new friend";
@@ -17,23 +16,15 @@
 
   }
 
-  // instancja klasy 
   $userOne = new User('mario', 'mario@thenetninja.co.uk');
   $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
-  echo $userOne->username . '</br>';
-  echo $userOne->email . '</br>';
-  echo $userOne->addFriend() . '</br>';
+  // $userOne->email = 3;
 
-  // $userTwo->username = 'yoshi';
-  // $userTwo->email = 'yoshi@thenetninja.co.uk';
+  // echo $userOne->email . '</br>';
+  // echo $userTwo->email . '</br>';
 
-  echo $userTwo->username . '</br>';
-  echo $userTwo->email . '</br>';
-  echo $userTwo->addFriend() . '</br>';
-
-  // print_r(get_class_vars('User'));
-  // print_r(get_class_methods('User'));
+  echo $userOne->addFriend();
 
 ?>
 
