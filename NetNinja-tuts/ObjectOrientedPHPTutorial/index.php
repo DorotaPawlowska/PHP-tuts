@@ -2,8 +2,14 @@
 
   class User {
 
-    public $username = 'Ryu';
-    public $email = 'ryu@thenetninja.co.uk';
+    public $username;
+    public $email;
+
+    public function __construct($username, $email){
+      $this->username = $username;
+      $this->email = $email;
+    }
+
 
     public function addFriend(){
       return "$this->email added a new friend";
@@ -12,15 +18,15 @@
   }
 
   // instancja klasy 
-  $userOne = new User();
-  $userTwo = new User();
+  $userOne = new User('mario', 'mario@thenetninja.co.uk');
+  $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
   echo $userOne->username . '</br>';
   echo $userOne->email . '</br>';
   echo $userOne->addFriend() . '</br>';
 
-  $userTwo->username = 'yoshi';
-  $userTwo->email = 'yoshi@thenetninja.co.uk';
+  // $userTwo->username = 'yoshi';
+  // $userTwo->email = 'yoshi@thenetninja.co.uk';
 
   echo $userTwo->username . '</br>';
   echo $userTwo->email . '</br>';
