@@ -14,6 +14,21 @@
       return "$this->email added a new friend";
     }
 
+    // getters
+    public function getEmail(){
+      return $this->email;
+    }
+
+    // setters
+    public function setEmail($email){
+      if(strpos($email, '@') > -1){
+        $this->email = $email;
+      }
+    }
+
+
+
+
   }
 
   $userOne = new User('mario', 'mario@thenetninja.co.uk');
@@ -24,7 +39,10 @@
   // echo $userOne->email . '</br>';
   // echo $userTwo->email . '</br>';
 
-  echo $userOne->addFriend();
+  $userOne->setEmail('yoshi@thenetninja.co.uk');
+
+  echo $userOne->getEmail() . '</br>';
+  echo $userTwo->getEmail() . '</br>';
 
 ?>
 
