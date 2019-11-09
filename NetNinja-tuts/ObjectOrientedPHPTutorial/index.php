@@ -1,67 +1,34 @@
 <?php
 
-  class User {
+  // utility class
 
-    public $username;
-    protected $email;
-    public $role = 'member';
+  class Weather {
 
-    public function __construct($username, $email){
-      $this->username = $username;
-      $this->email = $email;
+    private static $tempConditions = [ 'cold', 'mild', 'warm' ];
+
+    public static function celsiusToFarenheit($c){
+      return $c * 9 / 5 + 32;
     }
 
-    public function __destruct(){
-      echo "the user $this->username was removed </br>";
-    }
-
-    public function __clone(){
-      $this->username = $this->username . '(cloned)</br>';
-    }
-
-    public function addFriend(){
-      return "$this->email added a new friend";
-    }
-
-    public function message(){
-      return "$this->email sent a new message";
-    }
-
-    // getters
-    public function getEmail(){
-      return $this->email;
-    }
-
-    // setters
-    public function setEmail($email){
-      if(strpos($email, '@') > -1){
-        $this->email = $email;
+    public static function determineTempCondition($f){
+      if($f < 40){
+        return self::$tempConditions[0];
+      } elseif ($f < 70) {
+        return self::$tempConditions[1];
+      } else {
+        return self::$tempConditions[2];
       }
     }
   }
 
-  class AdminUser extends User {
-    public $level;
-    public $role = 'admin';
+  // $wetherInstance = new Weather();
+  // print_r($wetherInstance->tempConditions);
 
-    public function __construct($username, $email, $level){
-      $this->level = $level;
-      parent::__construct($username, $email);
-    }
-    
-    public function message(){
-      return "$this->email, an admin, sent a new message";
-    }
+  // print_r(Weather::$tempConditions);
+  // echo Weather::celsiusToFarenheit(20);
+  echo Weather::determineTempCondition(80);
 
-  }
 
-  $userOne = new User('mario', 'mario@thenetninja.co.uk');
-  $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
-  $userThree = new AdminUser('yoshi', 'yoshi@thenetninja.co.uk', 5);
-
-  // unset($userOne);
-  $userFour = clone $userOne;
-  echo $userFour->username;
 
 ?>
 
