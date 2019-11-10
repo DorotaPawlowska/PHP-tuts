@@ -1,7 +1,6 @@
 <?php
 
   // utility class
-
   class Weather {
 
     private static $tempConditions = [ 'cold', 'mild', 'warm' ];
@@ -27,8 +26,6 @@
   // print_r(Weather::$tempConditions);
   // echo Weather::celsiusToFarenheit(20);
   echo Weather::determineTempCondition(80);
-
-
 
 ?>
 
