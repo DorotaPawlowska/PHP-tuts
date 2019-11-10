@@ -1,8 +1,14 @@
 <?php
 
+require('user_validator.php');
+
   if(isset($_POST['submit'])){
     // validate entries
-    echo 'form submitted';
+    // echo 'form submitted';
+    $validation = new UserValidator($_POST);
+    $error = $validation->validateForm();
+
+    // save data to db
   }
 
 ?>
@@ -22,10 +28,22 @@
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
       <label>Username:</label>
-      <input type="text" name="username">
+      <input 
+      type="text" 
+      name="username" 
+      value="<?php echo htmlspecialchars($_POST['username']) ?? ' ' ?>" />
+      <div class="error">
+        <?php echo $error['username'] ?? ''; ?>
+      </div>
 
       <label>Email:</label>
-      <input type="text" name="email">
+      <input 
+      type="text" 
+      name="email" 
+      value="<?php echo htmlspecialchars($_POST['email']) ?? ' ' ?>" />
+      <div class="error">
+        <?php echo $error['email'] ?? ''; ?>
+      </div>
 
       <input type="submit" value="submit" name="submit">
 
