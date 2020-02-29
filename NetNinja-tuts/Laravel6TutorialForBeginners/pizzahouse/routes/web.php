@@ -12,16 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
 Route::get('/pizzas', function () {
-    // get data from database
-    $pizzas = [
-        ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin & crispy']
-    ];
+  // get data from database
+  $pizzas = [
+    ['type' => 'hawaiian', 'base' => 'cheesy crust'],
+    ['type' => 'volcano', 'base' => 'garlic crust'],
+    ['type' => 'veg supreme', 'base' => 'thin & crispy']
+  ];
 
-    return view('pizzas', ['pizzas' => $pizzas]);
+  return view('pizzas', [
+    'pizzas' => $pizzas,
+    'name' => request('name'),
+    'age' => request('age')
+  ]);
 });
