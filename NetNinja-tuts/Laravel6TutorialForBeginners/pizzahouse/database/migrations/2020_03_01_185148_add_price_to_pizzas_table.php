@@ -6,29 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 class AddPriceToPizzasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::table('pizzas', function (Blueprint $table) {
-            //
-            $table->integer('price');
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::table('pizzas', function (Blueprint $table) {
+      //
+      // $table->integer('price');
+    });
+  }
 
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::table('pizzas', function (Blueprint $table) {
-            //
-        });
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::table('pizzas', function (Blueprint $table) {
+      //
+    });
+  }
 }
